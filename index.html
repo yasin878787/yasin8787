@@ -95,6 +95,19 @@ ul{text-align: right;}
   0%{color:red;}50%{color: blue;}100%{color: blueviolet;}
 }
 
+/* دارک کردن صفحه */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+
+
+
 </style>
 </head>
 <body>
@@ -380,7 +393,7 @@ ul{text-align: right;}
           
             <a  class="yasin20" href="https://yasinbanihashmi.github.io/Yasin/" target="_blank" style="padding: 10px 20px; background:rgb(39, 135, 183); color: white; text-decoration: none; border-radius:1000px; width: 110px;;position: fixed;bottom: 1; right: 0; ">ارتباط با من</a>
             <a  class="yasin20" href="EN.html" target="_blank" style="padding: 10px 20px; background:rgb(39, 135, 183); color: white; text-decoration: none; border-radius:1000px; width: 110px;;position: fixed;bottom: 1; left: 0; ">EN</a>
-
+            <a  class="btn  btn-dark" id="theme-toggle">دارک</a>
 
 </div>
 </div>
@@ -392,6 +405,22 @@ ul{text-align: right;}
 
 
 </footer>
+<script>
+  // انتخاب دکمه تغییر تم
+const themeToggle = document.getElementById('theme-toggle');
 
+// اضافه کردن رویداد کلیک به دکمه
+themeToggle.addEventListener('click', () => {
+    // تغییر کلاس body به dark-mode
+    document.body.classList.toggle('dark-mode');
+
+    // تغییر متن دکمه بر اساس حالت تم
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggle.textContent = 'تم روشن';
+    } else {
+        themeToggle.textContent = 'تم تاریک';
+    }
+});
+</script>
 
 </html>
